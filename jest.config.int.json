@@ -1,0 +1,26 @@
+{
+  "testEnvironment": "node",
+  "testRegex": "(/__tests_int__/.*(\\.|/)(test|spec)|.(int)(\\.|/)(test|spec))\\.ts$",
+  "projects": ["<rootDir>/*/jest.config.int.json"],
+  "preset": "ts-jest",
+  "reporters": [
+    "default",
+    [
+      "jest-junit",
+      {
+        "outputName": "junit_int.xml"
+      }
+    ]
+  ],
+  "collectCoverage": true,
+  "coverageDirectory": "coverage",
+  "coverageReporters": ["lcov", "text", "cobertura"],
+  "transform": {
+    ".+\\.ts": [
+      "ts-jest",
+      {
+        "diagnostics": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+node_modules
+dist
+lib
+comminlint.config.js
+snake-case.ts
+*.it-schema.ts
+databases/main-pg
+extra/tracing

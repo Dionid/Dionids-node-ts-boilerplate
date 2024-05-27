@@ -1,0 +1,12 @@
+**/node_modules
+**/build
+**/coverage
+**/.local
+**/dist
+charts
+**/.gitlab
+*.it-schema.ts
+databases/main-pg
+CHANGELOG.md
+libs/common/src/@dnb/database/core/migrations-table.ts
+.gitlab/

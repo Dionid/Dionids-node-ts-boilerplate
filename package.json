@@ -1,0 +1,102 @@
+{
+  "name": "@dnb/node-ts-boilerplate",
+  "version": "1.1.0",
+  "private": "true",
+  "workspaces": [
+    "databases/main-pg",
+    "libs/common",
+    "libs/proto",
+    "service-template",
+    "dodo",
+    "ddos"
+  ],
+  "engines": {
+    "node": "16"
+  },
+  "scripts": {
+    "prettier:base": "prettier \"**/*.{js,ts{,x},yml,yaml,json,md}\"",
+    "prettier:write": "npm run prettier:base -- --write",
+    "prettier:check": "npm run prettier:base -- --check",
+    "lint:check": "eslint --max-warnings 0 --format stylish \"!(node_modules)/**/*.ts{,x}\"",
+    "lint:write": "npm run lint:check -- --fix",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "release:local": "standard-version",
+    "release": "semantic-release --no-verify",
+    "dockerize": "lerna-dockerize",
+    "build": "npm run lerna:build",
+    "pretest": "npm run build -w libs/common",
+    "test": "npm run lerna:test",
+    "test:int": "npm run pretest && jest --config jest.config.int.json --runInBand --passWithNoTests",
+    "test:unit": "npm run pretest && jest --config jest.config.unit.json --passWithNoTests",
+    "lerna:install": "lerna bootstrap",
+    "lerna:build": "lerna run build",
+    "lerna:build:dev": "lerna run build:dev",
+    "lerna:cp": "lerna run cp",
+    "lerna:test": "lerna run test:unit && lerna run test:int --concurrency 1",
+    "lerna:test:unit": "lerna run test:unit",
+    "lerna:test:int": "lerna run test:int --concurrency 1",
+    "spell:check": "cspell \"{README.md,CODE_OF_CONDUCT.md,CONTRIBUTING.md,.github/*.md,*/src/**/*.ts}\""
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --max-warnings 1 --format stylish --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,yml,yaml,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.4.2",
+    "@commitlint/config-conventional": "17.4.2",
+    "@semantic-release/changelog": "6.0.2",
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/exec": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/gitlab": "9.5.1",
+    "@smrtvnd/main-pg": "file:databases/main-pg",
+    "@types/jest": "^29.5.2",
+    "@types/node": "^16.18.14",
+    "@types/pg": "^8.6.6",
+    "@typescript-eslint/eslint-plugin": "5.48.2",
+    "@typescript-eslint/parser": "5.48.2",
+    "clang-format": "1.8.0",
+    "conventional-changelog-cli": "2.2.2",
+    "cspell": "^6.19.2",
+    "docker-compose": "0.23.17",
+    "env-cmd": "^10.1.0",
+    "eslint": "8.32.0",
+    "eslint-config-prettier": "8.6.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jest": "27.2.1",
+    "eslint-plugin-testing-library": "5.9.1",
+    "eslint-plugin-unused-imports": "2.0.0",
+    "git-branch-is": "4.0.0",
+    "husky": "8.0.3",
+    "introspect-it": "^0.4.1",
+    "jest": "^29.4.0",
+    "jest-junit": "^15.0.0",
+    "jest-mock-extended": "^3.0.1",
+    "lerna-dockerize": "^1.0.4",
+    "lint-staged": "13.1.0",
+    "multi-semantic-release": "3.0.1",
+    "nx": "15.5.2",
+    "prettier": "2.8.3",
+    "rimraf": "^5.0.0",
+    "semantic-release": "20.0.2",
+    "semantic-release-monorepo": "7.0.5",
+    "standard-version": "9.5.0",
+    "ts-jest": "^29.0.5",
+    "typescript": "4.9.4"
+  },
+  "dependencies": {
+    "@cspell/dict-ru_ru": "^2.0.5",
+    "@sinclair/typebox": "^0.28.15",
+    "lerna": "^6.4.1"
+  }
+}
