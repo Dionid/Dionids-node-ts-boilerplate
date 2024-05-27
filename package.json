@@ -1,13 +1,10 @@
 {
-  "name": "@dnb/node-ts-boilerplate",
+  "name": "@dntb/dionids-node-ts-boilerplate",
   "version": "1.1.0",
   "private": "true",
   "workspaces": [
     "databases/main-pg",
-    "libs/common",
-    "libs/proto",
-    "service-template",
-    "dodo",
+    "libs/shared",
     "ddos"
   ],
   "engines": {

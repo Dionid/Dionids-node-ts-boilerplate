@@ -1,0 +1,12 @@
+version: "3.9"
+name: smvend-int-tests
+services:
+  dnb-main-pg-migrations:
+    image: "dnb-main-pg-migrations:latest"
+    container_name: "dnb-main-pg-migrations"
+    entrypoint: ["npm", "run", "migration:up", "--", "-e", "dynamic-db"]
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: dnb-main-pg
+      POSTGRES_HOST: satan-for-test

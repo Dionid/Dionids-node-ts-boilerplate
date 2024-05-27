@@ -1,0 +1,19 @@
+{
+  "name": "@dnb/main-pg",
+  "version": "1.0.0",
+  "private": "true",
+  "scripts": {
+    "migration:check": "db-migrate check -m migrations --config ./database.json",
+    "migration:create": "db-migrate create $npm_config_name -m migrations --config ./database.json --sql-file",
+    "migration:up": "db-migrate up -m migrations --config ./database.json",
+    "migration:down": "db-migrate down -m migrations --config ./database.json",
+    "fixture:check": "db-migrate check -m fixtures --table fixture --config ./database.json",
+    "fixture:create": "db-migrate create $npm_config_name -m fixtures --table fixture --config ./database.json --sql-file",
+    "fixture:up": "db-migrate up $npm_config_name -m fixtures --table fixture --config ./database.json",
+    "fixture:down": "db-migrate down $npm_config_name -m fixtures --table fixture --config ./database.json"
+  },
+  "dependencies": {
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2"
+  }
+}

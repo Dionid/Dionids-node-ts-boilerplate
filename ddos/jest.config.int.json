@@ -1,0 +1,29 @@
+{
+  "testEnvironment": "node",
+  "testRegex": "(/__tests_int__/.*(\\.|/)(test|spec)|.(int)(\\.|/)(test|spec))\\.ts$",
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "globalSetup": "<rootDir>/src/tests/global-setup.ts",
+  "globalTeardown": "<rootDir>/src/tests/global-teardown.ts",
+  "preset": "ts-jest",
+  "reporters": [
+    "default",
+    [
+      "jest-junit",
+      {
+        "outputName": "junit_int.xml"
+      }
+    ]
+  ],
+  "collectCoverage": true,
+  "coverageDirectory": "coverage",
+  "coverageReporters": ["lcov", "text", "cobertura"],
+  "transform": {
+    ".+\\.ts": [
+      "ts-jest",
+      {
+        "diagnostics": true,
+        "tsConfig": "tsconfig.json"
+      }
+    ]
+  }
+}

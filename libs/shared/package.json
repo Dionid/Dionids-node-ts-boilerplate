@@ -1,0 +1,45 @@
+{
+  "name": "@dntb/libs-shared",
+  "version": "0.0.1",
+  "description": "Dntb common libs",
+  "license": "UNLICENSED",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test:unit": "jest --passWithNoTests --config jest.config.unit.json",
+    "build:dev": "rimraf dist && tsc -P tsconfig.json",
+    "introspect:dnb-db": "env-cmd -f ./.dnb-db.ints.env npm run introspect:dnb-db:plain && npm run introspect:export:migrations",
+    "introspect:dnb-db:plain": "introspect-it infer --ignoreTables pg_stat_statements_info > src/@dnb/dbs/main-pg/dnb-db.it-schema.ts",
+    "introspect:export:migrations": "env-cmd -f ./.dnb-db.ints.env introspect-it export migrations --ignoreColumns run_on > src/@dnb/dbs/main-pg/migrations-table.ts"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/uuid": "^9.0.0",
+    "fastify": "4.12",
+    "introspect-it": "^2.0.0",
+    "jest": "^29.5.0",
+    "jest-junit": "^15.0.0",
+    "jest-mock-extended": "^3.0.1",
+    "knex": "^2.4.2",
+    "kysely": "^0.27.2",
+    "pg": "^8.8.0",
+    "pino": "8.8",
+    "ts-jest": "^29.1.0",
+    "uuid": "^9.0.0"
+  },
+  "peerDependencies": {
+    "kysely": "^0.27.2",
+    "pg": "^8.8.0",
+    "pino": "8.8",
+    "uuid": "^9.0.0"
+  },
+  "dependencies": {
+    "docker-compose": "^0.24.3",
+    "ioredis": "^5.3.2",
+    "nice-grpc": "^2.1.7",
+    "zod": "^3.22.4"
+  }
+}

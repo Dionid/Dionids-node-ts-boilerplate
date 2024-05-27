@@ -1,0 +1,15 @@
+FROM node:16.4.2 as builder
+
+WORKDIR /app
+
+COPY ./package.json .
+RUN yarn
+
+COPY ./migrations ./migrations
+COPY ./database.json .
+COPY ./package.json .
+
+ARG SERVICE_VERSION="latest"
+ENV SERVICE_VERSION=${SERVICE_VERSION}
+
+ENTRYPOINT [ "/bin/bash" ]

@@ -1,0 +1,40 @@
+{
+  "defaultEnv": "local",
+  "local": {
+    "driver": "pg",
+    "user": "postgres",
+    "password": "postgres",
+    "host": "localhost",
+    "database": "dnb",
+    "port": "5432",
+    "schema": "public"
+  },
+  "local-docker": {
+    "driver": "pg",
+    "user": "postgres",
+    "password": "postgres",
+    "host": "postgres",
+    "database": "dnb",
+    "port": "5432",
+    "schema": "public"
+  },
+  "dynamic-db": {
+    "driver": "pg",
+    "user": { "ENV": "POSTGRES_USER" },
+    "password": { "ENV": "POSTGRES_PASSWORD" },
+    "host": { "ENV": "POSTGRES_HOST" },
+    "database": { "ENV": "POSTGRES_DB" },
+    "port": { "ENV": "POSTGRES_PORT" },
+    "schema": "public"
+  },
+  "dynamic-db-ssl": {
+    "driver": "pg",
+    "user": { "ENV": "POSTGRES_USER" },
+    "password": { "ENV": "POSTGRES_PASSWORD" },
+    "host": { "ENV": "POSTGRES_HOST" },
+    "database": { "ENV": "POSTGRES_DB" },
+    "port": { "ENV": "POSTGRES_PORT" },
+    "ssl": { "ENV": "POSTGRES_SSL" },
+    "schema": "public"
+  }
+}
