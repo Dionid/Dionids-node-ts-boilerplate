@@ -1,4 +1,4 @@
-import { InternalError } from "../@dnb/typed-errors";
+import { InternalError } from "../@dntb/typed-errors";
 import { Sleep } from "../sleep";
 
 export class TooManyRetries extends InternalError {

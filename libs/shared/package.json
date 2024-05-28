@@ -7,10 +7,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "test:unit": "jest --passWithNoTests --config jest.config.unit.json",
-    "build:dev": "rimraf dist && tsc -P tsconfig.json",
-    "introspect:dnb-db": "env-cmd -f ./.dnb-db.ints.env npm run introspect:dnb-db:plain && npm run introspect:export:migrations",
-    "introspect:dnb-db:plain": "introspect-it infer --ignoreTables pg_stat_statements_info > src/@dnb/dbs/main-pg/dnb-db.it-schema.ts",
-    "introspect:export:migrations": "env-cmd -f ./.dnb-db.ints.env introspect-it export migrations --ignoreColumns run_on > src/@dnb/dbs/main-pg/migrations-table.ts"
+    "build:dev": "rimraf dist && tsc -P tsconfig.json"
   },
   "engines": {
     "node": "16.x"

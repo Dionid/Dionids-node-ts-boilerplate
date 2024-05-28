@@ -159,7 +159,7 @@ More info in `/${app}/README.md`
 
 - `/libs/common` – if it will be used in any application
 - `<app>/src/libs` – if it will be used only in this application
-- `*/libs/@dnb/*` – if it is project specific code
+- `*/libs/@dntb/*` – if it is project specific code
 
 # Architecture
 

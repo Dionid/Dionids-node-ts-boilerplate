@@ -1,6 +1,6 @@
 import * as dockerCompose from "docker-compose";
 
-import { InternalError } from "../@dnb";
+import { InternalError } from "../@dntb";
 import { Retry, TooManyRetries } from "../retry";
 import { Sleep } from "../sleep";
 import mapPorts from "./map-ports";

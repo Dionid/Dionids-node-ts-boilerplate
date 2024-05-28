@@ -1,4 +1,4 @@
-export * from "./@dnb";
+export * from "./@dntb";
 export * from "./array";
 export * from "./deferred";
 export * from "./docker-compose";

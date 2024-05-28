@@ -33,7 +33,7 @@ export const UuidFactory = <T extends UUID>() => {
   };
 };
 
-export const zUUID = <B extends Branded<any, any>>(uuidFactory: {
+export const zUUID = <B extends Branded<unknown, never>>(uuidFactory: {
   fromString: (val: string) => B;
 }) =>
   z.custom<B>(

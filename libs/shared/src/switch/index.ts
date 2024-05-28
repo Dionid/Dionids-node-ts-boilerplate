@@ -1,4 +1,4 @@
-import { InternalError } from "../@dnb";
+import { InternalError } from "../@dntb";
 
 export const safeGuard = (arg: never, err?: Error) => {
   if (err) {
@@ -8,7 +8,8 @@ export const safeGuard = (arg: never, err?: Error) => {
   throw new InternalError("Safe guard executed!");
 };
 
-export const safeGuardWithoutThrow = (arg: never) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const safeGuardWithoutThrow = (_: never) => {
   return;
 };
 

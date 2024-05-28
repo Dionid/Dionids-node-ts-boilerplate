@@ -1,5 +1,5 @@
 import { pino } from "pino";
-import { BaseError } from "../@dnb";
+import { BaseError } from "../@dntb";
 
 export const Logger = {
   init: (

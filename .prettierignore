@@ -8,5 +8,5 @@ charts
 *.it-schema.ts
 databases/main-pg
 CHANGELOG.md
-libs/common/src/@dnb/database/core/migrations-table.ts
+libs/common/src/@dntb/database/core/migrations-table.ts
 .gitlab/

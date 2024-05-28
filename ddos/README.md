@@ -1,3 +1,3 @@
-# DnB Core Api Service
+# Dntb Core Api Service
 
 ...

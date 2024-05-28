@@ -1,4 +1,4 @@
-import { InternalError } from "../@dnb/typed-errors";
+import { InternalError } from "../@dntb/typed-errors";
 
 export const getEnvOrThrow =
   (log?: (e: Error) => unknown) =>
