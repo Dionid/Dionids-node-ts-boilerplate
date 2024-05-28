@@ -16,7 +16,7 @@
     "prettier:check": "npm run prettier:base -- --check",
     "lint:check": "eslint --max-warnings 0 --format stylish \"!(node_modules)/**/*.ts{,x}\"",
     "lint:write": "npm run lint:check -- --fix",
-    "prepare": "husky install",
+    "prepare": "git config core.hooksPath .git-hooks || echo 'Not in a git repo'",
     "lint-staged": "lint-staged",
     "release:local": "standard-version",
     "release": "semantic-release --no-verify",
