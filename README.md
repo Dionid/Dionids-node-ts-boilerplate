@@ -163,16 +163,6 @@ More info in `/${app}/README.md`
 
 # Architecture
 
-## Distributed Functions
-
-Wrapper around multiple transport for simple cross-(service|client) communication.
-
-1. Call – request-response pattern on RPC (multiple producers, single consumer)
-1. Event – EDA on RPC (multiple producers, multiple consumers)
-1. Transport – transport abstraction (RMQ, HTTP)
-
-It handles all from schema, subscription, routing, publishing, etc.
-
 ## Branded types
 
 Types that will be checked in runtime and compile time like `UInt32`, `Email`, `ControllerSerialNumber`.
