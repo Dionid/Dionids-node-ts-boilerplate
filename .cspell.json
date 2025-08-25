@@ -2,13 +2,11 @@
   "version": "0.2",
   "language": "en,ru",
   "words": [
-    "smvd",
     "Unbrand",
     "JSONify",
     "cqrs",
     "pino",
     "XMODEM",
-    "rabbitmq",
     "fanout",
     "fastify",
     "pttl",
@@ -25,7 +23,6 @@
     "unregistred",
     "datetime",
     "tsok",
-    "typebox",
     "openapi"
   ],
   "flagWords": [],
